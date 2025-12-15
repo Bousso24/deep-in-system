@@ -171,14 +171,6 @@ ssh-keygen -t rsa -b 4096 -C "luffy@server" -f ~/.ssh/id_luffy
  . -aG : Ajoute aux Groupes (sans écraser les groupes existants)
  . sudo : Groupe qui donne les privilèges administrateur
 → luffy peut utiliser sudo pour exécuter des commandes admin
- - Changer le propriétaire:
- ```bash
- sudo chown -R luffy:luffy /home/luffy/.ssh 
- ```
- . chown : Change le propriétaire
- . -R : Récursif (dossier et contenu)
- . luffy:luffy : Propriétaire:groupe
-→L'utilisateur luffy devient propriétaire de son dossier .ssh
  - Créer le dossier .ssh où seront stockées les clés SSH
  ```bash
  sudo mkdir -p /home/luffy/.ssh
@@ -187,6 +179,14 @@ ssh-keygen -t rsa -b 4096 -C "luffy@server" -f ~/.ssh/id_luffy
  . -p : Crée les répertoires parents si nécessaire
  . /home/luffy/.ssh : Dossier où seront stockées les clés SSH
 → C'est un dossier caché (commence par .)
+ - Changer le propriétaire:
+ ```bash
+ sudo chown -R luffy:luffy /home/luffy/.ssh 
+ ```
+ . chown : Change le propriétaire
+ . -R : Récursif (dossier et contenu)
+ . luffy:luffy : Propriétaire:groupe
+→L'utilisateur luffy devient propriétaire de son dossier .ssh
 dans cette dossier on va cree un fichier /home/luffy/.ssh/authorized_keys qui vas stocker la cle publique
 
 - Sécurisons nos dossiers:
